@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#142D5A">
+<title>Corvane Energy SAP Controls Project</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="login" class="login-wrap">
+  <div class="login-card">
+    <div class="muted">TIB SYSTEMS</div>
+    <h1>Corvane Energy SAP Controls Project</h1>
+    <div class="accent"></div>
+    <p>Sign in with your TIB Academy account.</p>
+    <div id="msg"></div>
+    <div class="field"><label>Email</label><input id="email" type="email" placeholder="name@example.com"></div>
+    <div class="field"><label>Password</label><input id="password" type="password"></div>
+    <button id="signIn" class="btn primary" style="width:100%">SIGN IN</button>
+  </div>
+</section>
+
+<section id="app" class="shell hidden">
+  <aside class="sidebar">
+    <div class="brand"><div class="tib">TIB SYSTEMS</div><h1 id="brandTitle"></h1><p id="brandSubtitle"></p></div>
+    <button class="navbtn static-nav active" data-view="overview">Overview</button>
+    <button class="navbtn static-nav" data-view="path">Full Learning Path</button>
+    <div id="navGroups"></div>
+    <button class="navbtn static-nav" data-view="materials">Materials</button>
+    <button class="navbtn static-nav" data-view="submissions">My Submissions</button>
+    <button class="navbtn static-nav" data-view="assessment">Assessment / Gates</button>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <div class="page-title"><h2 id="pageTitle"></h2><p id="pageSubtitle"></p></div>
+      <div class="userbox"><span id="userEmail"></span><button id="logout" class="btn">Logout</button></div>
+    </div>
+    <div class="mobile-note callout">For workbook-intensive activities, continue on a laptop or desktop.</div>
+    <div id="content"></div>
+  </main>
+</section>
+<script type="module" src="app.js"></script>
+</body>
+</html>
