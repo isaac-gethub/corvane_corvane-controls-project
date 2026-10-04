@@ -1,193 +1,308 @@
 {
-  "course_code": "TIB-PM-CONTROLS-LEAD",
-  "app_course_id": "pm_to_controls_lead",
-  "display_name": "From SAP Project Manager to Controls Lead",
-  "short_name": "Controls Lead Academy",
-  "brand_subtitle": "LEADERSHIP BRIDGE PROGRAMME",
-  "subtitle": "Eight-week bridge programme for leading an SAP controls project at an oil and gas company.",
-  "duration": "8 weeks",
-  "study_load": "About 85 hours • roughly 11 hours/week",
-  "unit_label_plural": "Modules",
-  "learning_principle_title": "Lead-depth principle",
-  "learning_principle": "A controls lead does not need to test every control. The lead needs to know what good scoping, evidence and conclusions look like, see when the team is cutting a corner, and hold the line with the client and auditor.",
+  "course_code": "TIB-CORVANE-CONTROLS-PROJECT",
+  "app_course_id": "corvane_controls_project",
+  "display_name": "Corvane Energy SAP Controls Project",
+  "short_name": "Controls Project Simulator",
+  "brand_subtitle": "CORVANE ENERGY • PROJECT SIMULATION",
+  "subtitle": "A complete, worked SOX-focused SAP controls project from landscape to conclusion.",
+  "duration": "9 stages",
+  "study_load": "14 linked workbooks plus case, manuals and practice",
+  "unit_label_plural": "Workbooks",
+  "learning_principle_title": "Project-simulation model",
+  "learning_principle": "Work through the engagement in dependency order. Each downstream workbook relies on source keys and evidence from upstream workbooks. Gates control progression.",
   "groups": [
     {
-      "id": "week1",
-      "label": "Week 1",
-      "summary": "Self-assessment complete; controls vocabulary quiz passed",
+      "id": "stage1",
+      "label": "Stage 1 — Understand the Environment",
+      "summary": "Build the factual landscape and interface scope. Gate G1.",
       "items": [
         {
-          "id": "M0",
-          "code": "Module 0 —",
-          "title": "Orientation and self-assessment",
-          "meta": "2 hours • Self-assessment; mentor call",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "id": "W01",
+          "code": "W01",
+          "title": "Landscape & System Inventory",
+          "meta": "Environment",
+          "description": "Identify the systems, clients, company codes, production status and transport routes that form the project landscape.",
+          "gate": "G1",
+          "gate_requirement": "All financially relevant systems and interfaces listed; validated or flagged; PRD transport route recorded.",
+          "submission_expected": true,
           "reading_refs": [
-            "tib-bridge-manual-a-modules-0-1",
-            "tib-pm-to-controls-lead-course-guide"
+            "tib-sap-controls-foundation-deployment-guide",
+            "w01-landscape-system-inventory-instructions",
+            "w01-landscape-system-inventory-instructions-2",
+            "p01-w01-landscape-system-inventory-instructions",
+            "x01-w01-landscape-system-inventory-instructions"
           ]
         },
         {
-          "id": "M1",
-          "code": "Module 1 —",
-          "title": "Controls and audit for the SAP project manager",
-          "meta": "7 hours • Reading, short exercises, quiz",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "id": "W02",
+          "code": "W02",
+          "title": "Interface & Data Flow Inventory",
+          "meta": "Environment",
+          "description": "Catalogue financially relevant interfaces and data flows.",
+          "dependencies": "W01 SYS-ID via Ref_SYS",
+          "gate": "G1",
+          "gate_requirement": "W01 and W02 Checks support the environment gate.",
+          "submission_expected": true,
           "reading_refs": [
-            "tib-bridge-manual-a-modules-0-1",
-            "tib-pm-to-controls-lead-course-guide"
+            "tib-sap-controls-foundation-deployment-guide",
+            "w02-interface-data-flow-inventory-instructions",
+            "w02-interface-data-flow-inventory-instructions-2",
+            "p02-w02-interface-data-flow-inventory-instructions"
           ]
         }
       ]
     },
     {
-      "id": "week2",
-      "label": "Week 2",
-      "summary": "Security and oil-and-gas quizzes passed",
+      "id": "stage2",
+      "label": "Stage 2 — Define Process Scope",
+      "summary": "Map the business processes and technical areas. Gate G2.",
       "items": [
         {
-          "id": "M2",
-          "code": "Module 2 —",
-          "title": "SAP security and GRC without the jargon",
-          "meta": "7 hours • Reading, walkthrough role-play, quiz",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "id": "W03",
+          "code": "W03",
+          "title": "Module & Business Process Scope",
+          "meta": "Scope",
+          "description": "Map significant FSLIs, SAP modules, business processes and technical areas.",
+          "gate": "G2",
+          "gate_requirement": "Every significant FSLI mapped; technical areas present; unspecified processes recorded as Outstanding rather than guessed.",
+          "submission_expected": true,
           "reading_refs": [
-            "tib-bridge-manual-b-modules-2-3"
+            "tib-sap-controls-foundation-deployment-guide",
+            "w03-module-business-process-scope-instructions",
+            "w03-module-business-process-scope-instructions-2",
+            "p03-w03-module-business-process-scope-instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage3",
+      "label": "Stage 3 — Identify Risks",
+      "summary": "Build the risk register from scoped processes. Gate G3.",
+      "items": [
+        {
+          "id": "W04",
+          "code": "W04",
+          "title": "Risk Register",
+          "meta": "Risk",
+          "description": "Define risks against scoped business processes and identify SOX relevance and ownership.",
+          "dependencies": "W03 BP-ID via Ref_BP",
+          "gate": "G3",
+          "gate_requirement": "No BP-ID without a risk; SOX risks flagged; owners agreed.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w04-risk-register-instructions",
+            "w04-risk-register-instructions-2",
+            "p04-w04-risk-register-instructions",
+            "x02-w04-risk-register-instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage4",
+      "label": "Stage 4 — Design the Control Set",
+      "summary": "Map controls, dependencies, SoD and sensitive access. Gate G4.",
+      "items": [
+        {
+          "id": "W05",
+          "code": "W05",
+          "title": "Risk Control Matrix",
+          "meta": "Control design",
+          "description": "Map controls to risks, identify key controls and ITGC dependencies.",
+          "dependencies": "W04 RISK-ID via Ref_RISK",
+          "gate": "G4",
+          "gate_requirement": "No SOX risk without a key control; ITGC dependencies recorded.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w05-risk-control-matrix-instructions",
+            "w05-risk-control-matrix-instructions-2",
+            "p05-w05-risk-control-matrix-instructions",
+            "x03-w05-risk-control-matrix-instructions"
           ]
         },
         {
-          "id": "M3",
-          "code": "Module 3 —",
-          "title": "Oil and gas on SAP: landscape, processes and control risks",
-          "meta": "6 hours • Reading, workbook tour, quiz",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
-          "reading_refs": [
-            "tib-bridge-manual-b-modules-2-3"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "week3",
-      "label": "Week 3",
-      "summary": "Primer labs done; Find the Errors scored 15 or more out of 18",
-      "items": [
-        {
-          "id": "M4",
-          "code": "Module 4 —",
-          "title": "The workbook toolkit",
-          "meta": "10 hours • Hands-on labs; error hunt",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
-          "reading_refs": [
-            "tib-workbook-primer-part1-sessions-1-5",
-            "tib-workbook-primer-part2-sessions-6-10",
-            "tib-workbook-primer-part3-sessions-11-12-assessment",
-            "tib-assessment-pack-modules-4-8-participant"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "week4",
-      "label": "Week 4",
-      "summary": "Scoping exercise submitted",
-      "items": [
-        {
-          "id": "M5",
-          "code": "Module 5 —",
-          "title": "The method: from foundation to test plan",
-          "meta": "12 hours • Reading, exercises, case review",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "id": "W06",
+          "code": "W06",
+          "title": "SoD & Sensitive Access Matrix",
+          "meta": "Access governance",
+          "description": "Define SoD risks, rules and mitigations.",
+          "dependencies": "W04 RISK-ID and W05 CTRL-ID",
+          "gate": "G4",
+          "gate_requirement": "Every SoD risk has a rule and the ruleset is approved.",
           "submission_expected": true,
           "reading_refs": [
-            "tib-sap-controls-foundation-manual-part1",
-            "tib-sap-controls-foundation-manual-part2"
+            "tib-sap-controls-foundation-deployment-guide",
+            "w06-sod-sensitive-access-matrix-instructions",
+            "w06-sod-sensitive-access-matrix-instructions-2"
           ]
         }
       ]
     },
     {
-      "id": "week5",
-      "label": "Week 5",
-      "summary": "Workpaper case review submitted",
+      "id": "stage5",
+      "label": "Stage 5 — Confirm People",
+      "summary": "Confirm control and evidence ownership. Gate G5.",
       "items": [
         {
-          "id": "M6",
-          "code": "Module 6 —",
-          "title": "Reading and directing the testing",
-          "meta": "8 hours • Case review of workpapers and results",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "id": "W07",
+          "code": "W07",
+          "title": "Control & Evidence Owner Matrix",
+          "meta": "Ownership",
+          "description": "Confirm who owns controls, risks and evidence.",
+          "dependencies": "W05 CTRL-ID plus risk-owner context",
+          "gate": "G5",
+          "gate_requirement": "Owners confirmed or escalated; W14 may be issued in scoping form with no conclusion.",
           "submission_expected": true,
           "reading_refs": [
-            "tib-sap-controls-foundation-manual-part3a",
-            "tib-sap-controls-foundation-manual-part3b"
+            "tib-sap-controls-foundation-deployment-guide",
+            "w07-control-evidence-owner-matrix-instructions",
+            "w07-control-evidence-owner-matrix-instructions-2"
           ]
         }
       ]
     },
     {
-      "id": "week6",
-      "label": "Week 6",
-      "summary": "Evaluation exercise submitted",
+      "id": "stage6",
+      "label": "Stage 6 — Request & Receive Evidence",
+      "summary": "Request evidence, index it and prove populations. Gate G6.",
       "items": [
         {
-          "id": "M7",
-          "code": "Module 7 —",
-          "title": "Evaluating, remediating and reporting",
-          "meta": "8 hours • Evaluation exercise; reporting drill",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "id": "W08",
+          "code": "W08",
+          "title": "PBC Evidence Request Register",
+          "meta": "Evidence request",
+          "description": "Issue and track evidence requests for controls.",
+          "dependencies": "W05 CTRL-ID and W07 evidence owners",
+          "gate": "G6",
+          "gate_requirement": "Evidence requests support complete collection.",
           "submission_expected": true,
           "reading_refs": [
-            "tib-sap-controls-foundation-manual-part4"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "week7",
-      "label": "Week 7",
-      "summary": "Stakeholder map and draft project plan submitted",
-      "items": [
-        {
-          "id": "M8",
-          "code": "Module 8 —",
-          "title": "Leading the team and the stakeholders",
-          "meta": "8 hours • Reading, scenario discussions",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
-          "submission_expected": true,
-          "reading_refs": [
-            "corvane-story-controls-lead-narrative",
-            "controls-lead-playbook-15-person-team"
+            "tib-sap-controls-foundation-deployment-guide",
+            "w08-pbc-evidence-request-register-instructions",
+            "w08-pbc-evidence-request-register-instructions-2"
           ]
         },
         {
-          "id": "M9",
-          "code": "Module 9 —",
-          "title": "Planning and estimating a new controls project",
-          "meta": "8 hours • Plan-building workshop",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "id": "W09",
+          "code": "W09",
+          "title": "Evidence Index & IPE Log",
+          "meta": "Evidence / IPE",
+          "description": "Index evidence, record populations and complete IPE checks before sampling.",
+          "dependencies": "W08 PBC-ID via Ref_PBC",
+          "gate": "G6",
+          "gate_requirement": "Populations received and every IPE result is Pass.",
           "submission_expected": true,
           "reading_refs": [
-            "tib-module-9-planning-and-estimating",
-            "tib-controls-project-estimating-model-instructions"
+            "tib-sap-controls-foundation-deployment-guide",
+            "w09-evidence-index-ipe-log-instructions",
+            "w09-evidence-index-ipe-log-instructions-2",
+            "x04-w09-evidence-index-ipe-log-instructions"
           ]
         }
       ]
     },
     {
-      "id": "week8",
-      "label": "Week 8",
-      "summary": "Capstone pack and steering presentation; certification decision",
+      "id": "stage7",
+      "label": "Stage 7 — Plan the Tests",
+      "summary": "Build the design and operating-effectiveness test plan. Gate G7.",
       "items": [
         {
-          "id": "M10",
-          "code": "Module 10 —",
-          "title": "Capstone: a new oil and gas project",
-          "meta": "9 hours • Written pack and steering presentation",
-          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "id": "W10",
+          "code": "W10",
+          "title": "Test Plan",
+          "meta": "Testing plan",
+          "description": "Plan TOD, TOE, reliance and retests; schedule ITGC testing first.",
+          "dependencies": "W05 controls and W09 evidence/IPE",
+          "gate": "G7",
+          "gate_requirement": "TOD and TOE for every key control; ITGC tests scheduled first.",
           "submission_expected": true,
           "reading_refs": [
-            "tib-module-10-capstone-participant-brief"
+            "tib-sap-controls-foundation-deployment-guide",
+            "w10-test-plan-instructions",
+            "w10-test-plan-instructions-2",
+            "x05-w10-test-plan-instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage8",
+      "label": "Stage 8 — Sample & Test",
+      "summary": "Select samples and execute/review workpapers. Gate G8.",
+      "items": [
+        {
+          "id": "W12",
+          "code": "W12",
+          "title": "Sample Selection Log",
+          "meta": "Sampling",
+          "description": "Document samples only after the source population has passed IPE.",
+          "dependencies": "W10 TEST-ID and W09 population evidence",
+          "gate": "G8",
+          "gate_requirement": "Samples logged and agree to workpapers.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w12-sample-selection-log-instructions",
+            "w12-sample-selection-log-instructions-2"
+          ]
+        },
+        {
+          "id": "W11",
+          "code": "W11",
+          "title": "Test Workpapers",
+          "meta": "Execution",
+          "description": "Execute and review testing, linking exceptions to deficiencies or rationale.",
+          "dependencies": "W10 TEST-ID; samples from W12",
+          "gate": "G8",
+          "gate_requirement": "Workpapers reviewed by a different person; exceptions carry DEF-ID or rationale.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w11-test-workpapers-instructions",
+            "w11-test-workpapers-instructions-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage9",
+      "label": "Stage 9 — Evaluate & Conclude",
+      "summary": "Evaluate deficiencies and produce the coverage conclusion. Gate G9.",
+      "items": [
+        {
+          "id": "W13",
+          "code": "W13",
+          "title": "Deficiency & Remediation Log",
+          "meta": "Deficiency evaluation",
+          "description": "Log, group, evaluate and track remediation/retest of deficiencies.",
+          "dependencies": "W10 tests and W11 results",
+          "gate": "G9",
+          "gate_requirement": "Deficiencies evaluated and remediation/retest status supported.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w13-deficiency-remediation-log-instructions",
+            "w13-deficiency-remediation-log-instructions-2",
+            "x06-w13-deficiency-remediation-log-instructions"
+          ]
+        },
+        {
+          "id": "W14",
+          "code": "W14",
+          "title": "Scoping Workpaper & Coverage Dashboard",
+          "meta": "Conclusion",
+          "description": "Bring risk, control, testing, deficiency and reliance coverage together into the project conclusion.",
+          "dependencies": "W05, W10, W13 and reliance references",
+          "gate": "G9",
+          "gate_requirement": "Testing-stage coverage checks support the final conclusion.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w14-scoping-workpaper-coverage-dashboard-instructions",
+            "w14-scoping-workpaper-coverage-dashboard-instructions-2"
           ]
         }
       ]
@@ -195,70 +310,44 @@
   ],
   "materials": [
     {
-      "category": "Start Here",
+      "category": "Reference Manuals",
       "files": [
-        "README_PM_to_Controls_Lead_Course.docx",
-        "TIB_PM_to_Controls_Lead_Course_Guide.docx"
+        "TIB_SAP_Controls_Foundation_Deployment_Guide.docx",
+        "Foundation Manual Parts 1, 2, 3A, 3B and 4",
+        "Workbook Primer Parts 1–3"
       ]
     },
     {
-      "category": "Bridge Manuals",
+      "category": "Project Leadership",
       "files": [
-        "TIB_Bridge_Manual_A_Modules_0-1.docx",
-        "TIB_Bridge_Manual_B_Modules_2-3.docx"
+        "Corvane_Story_Controls_Lead_Narrative.docx",
+        "Controls_Lead_Playbook_15_Person_Team.docx",
+        "Corvane_Weekly_Activity_Plan.xlsx"
       ]
     },
     {
-      "category": "Planning",
+      "category": "Practice",
       "files": [
-        "TIB_Module_9_Planning_and_Estimating.docx",
-        "TIB_Controls_Project_Estimating_Model.xlsx"
-      ]
-    },
-    {
-      "category": "Capstone / Participant",
-      "files": [
-        "TIB_Module_10_Capstone_Participant_Brief.docx"
-      ]
-    },
-    {
-      "category": "Assessment / Participant",
-      "files": [
-        "TIB_Assessment_Pack_Modules_4-8_Participant.docx"
-      ]
-    },
-    {
-      "category": "Core Materials",
-      "files": [
-        "Controls Lead Playbook",
-        "Corvane Story",
-        "Weekly Activity Plan",
-        "Foundation Manual Parts 1–4",
-        "Workbook Primer Parts 1–3",
-        "Corvane case file"
-      ]
-    },
-    {
-      "category": "Instructor Only — protected",
-      "files": [
-        "Capstone Scoring Sheet",
-        "Instructor Guide and Answer Key",
-        "Capstone Assessor Guide"
+        "Practice_Case_Brief_Corvane_Lite.docx",
+        "P01–P05 blank practice workbooks",
+        "Find-the-Errors X01–X06",
+        "Instructor answer keys (protected)"
       ]
     }
   ],
-  "assessment": "Certification uses five elements: Module quizzes 15%, Practical 15%, Case reviews 20%, Planning pack 20%, Capstone 30%. Readiness requires 75% overall, at least 70% on every element, and the capstone presentation pass defined in the course guide.",
+  "assessment": "The Corvane simulator is organized around project gates G1–G9. A workbook is gate-ready when its built-in checks support the gate and any INFO items have been reviewed and accepted.",
   "course_home": {
     "study_model": [
-      "Read the current module online before starting the practical work.",
-      "Follow the source Course Guide reading-depth rule: Core, Skim or Reference.",
-      "Study the Corvane worked case when the module calls for it.",
-      "Download only the workbook, planning model or assignment template that you must work in.",
-      "Submit practical, case, planning and capstone work through the app."
+      "Start with Course Home and the Deployment Guide before opening W01.",
+      "Read the relevant online manual and workbook instructions before working in Excel.",
+      "Download Excel only when you need to perform the exercise or inspect the workbook.",
+      "Preserve IDs, Ref_ tabs, Checks tabs and the Golden Thread.",
+      "Submit completed workbooks through the course app when required."
     ],
     "start_here_refs": [
-      "readme-pm-to-controls-lead-course",
-      "tib-pm-to-controls-lead-course-guide"
+      "readme-corvane-case-file",
+      "tib-sap-controls-foundation-deployment-guide",
+      "corvane-story-controls-lead-narrative"
     ],
     "online_learning_statement": "Read the teaching content online first. Download files primarily when you need to work in an exercise, workbook, planning model or submission template.",
     "layers": [
