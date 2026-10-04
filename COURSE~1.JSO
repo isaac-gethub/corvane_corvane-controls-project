@@ -1,0 +1,279 @@
+{
+  "course_code": "TIB-PM-CONTROLS-LEAD",
+  "app_course_id": "pm_to_controls_lead",
+  "display_name": "From SAP Project Manager to Controls Lead",
+  "short_name": "Controls Lead Academy",
+  "brand_subtitle": "LEADERSHIP BRIDGE PROGRAMME",
+  "subtitle": "Eight-week bridge programme for leading an SAP controls project at an oil and gas company.",
+  "duration": "8 weeks",
+  "study_load": "About 85 hours • roughly 11 hours/week",
+  "unit_label_plural": "Modules",
+  "learning_principle_title": "Lead-depth principle",
+  "learning_principle": "A controls lead does not need to test every control. The lead needs to know what good scoping, evidence and conclusions look like, see when the team is cutting a corner, and hold the line with the client and auditor.",
+  "groups": [
+    {
+      "id": "week1",
+      "label": "Week 1",
+      "summary": "Self-assessment complete; controls vocabulary quiz passed",
+      "items": [
+        {
+          "id": "M0",
+          "code": "Module 0 —",
+          "title": "Orientation and self-assessment",
+          "meta": "2 hours • Self-assessment; mentor call",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "reading_refs": [
+            "tib-bridge-manual-a-modules-0-1",
+            "tib-pm-to-controls-lead-course-guide"
+          ]
+        },
+        {
+          "id": "M1",
+          "code": "Module 1 —",
+          "title": "Controls and audit for the SAP project manager",
+          "meta": "7 hours • Reading, short exercises, quiz",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "reading_refs": [
+            "tib-bridge-manual-a-modules-0-1",
+            "tib-pm-to-controls-lead-course-guide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week2",
+      "label": "Week 2",
+      "summary": "Security and oil-and-gas quizzes passed",
+      "items": [
+        {
+          "id": "M2",
+          "code": "Module 2 —",
+          "title": "SAP security and GRC without the jargon",
+          "meta": "7 hours • Reading, walkthrough role-play, quiz",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "reading_refs": [
+            "tib-bridge-manual-b-modules-2-3"
+          ]
+        },
+        {
+          "id": "M3",
+          "code": "Module 3 —",
+          "title": "Oil and gas on SAP: landscape, processes and control risks",
+          "meta": "6 hours • Reading, workbook tour, quiz",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "reading_refs": [
+            "tib-bridge-manual-b-modules-2-3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week3",
+      "label": "Week 3",
+      "summary": "Primer labs done; Find the Errors scored 15 or more out of 18",
+      "items": [
+        {
+          "id": "M4",
+          "code": "Module 4 —",
+          "title": "The workbook toolkit",
+          "meta": "10 hours • Hands-on labs; error hunt",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "reading_refs": [
+            "tib-workbook-primer-part1-sessions-1-5",
+            "tib-workbook-primer-part2-sessions-6-10",
+            "tib-workbook-primer-part3-sessions-11-12-assessment",
+            "tib-assessment-pack-modules-4-8-participant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week4",
+      "label": "Week 4",
+      "summary": "Scoping exercise submitted",
+      "items": [
+        {
+          "id": "M5",
+          "code": "Module 5 —",
+          "title": "The method: from foundation to test plan",
+          "meta": "12 hours • Reading, exercises, case review",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-manual-part1",
+            "tib-sap-controls-foundation-manual-part2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week5",
+      "label": "Week 5",
+      "summary": "Workpaper case review submitted",
+      "items": [
+        {
+          "id": "M6",
+          "code": "Module 6 —",
+          "title": "Reading and directing the testing",
+          "meta": "8 hours • Case review of workpapers and results",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-manual-part3a",
+            "tib-sap-controls-foundation-manual-part3b"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week6",
+      "label": "Week 6",
+      "summary": "Evaluation exercise submitted",
+      "items": [
+        {
+          "id": "M7",
+          "code": "Module 7 —",
+          "title": "Evaluating, remediating and reporting",
+          "meta": "8 hours • Evaluation exercise; reporting drill",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-manual-part4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week7",
+      "label": "Week 7",
+      "summary": "Stakeholder map and draft project plan submitted",
+      "items": [
+        {
+          "id": "M8",
+          "code": "Module 8 —",
+          "title": "Leading the team and the stakeholders",
+          "meta": "8 hours • Reading, scenario discussions",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "submission_expected": true,
+          "reading_refs": [
+            "corvane-story-controls-lead-narrative",
+            "controls-lead-playbook-15-person-team"
+          ]
+        },
+        {
+          "id": "M9",
+          "code": "Module 9 —",
+          "title": "Planning and estimating a new controls project",
+          "meta": "8 hours • Plan-building workshop",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-module-9-planning-and-estimating",
+            "tib-controls-project-estimating-model-instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week8",
+      "label": "Week 8",
+      "summary": "Capstone pack and steering presentation; certification decision",
+      "items": [
+        {
+          "id": "M10",
+          "code": "Module 10 —",
+          "title": "Capstone: a new oil and gas project",
+          "meta": "9 hours • Written pack and steering presentation",
+          "description": "Lead-depth learning: understand what good work looks like, how to challenge it, and how to direct the team.",
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-module-10-capstone-participant-brief"
+          ]
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "category": "Start Here",
+      "files": [
+        "README_PM_to_Controls_Lead_Course.docx",
+        "TIB_PM_to_Controls_Lead_Course_Guide.docx"
+      ]
+    },
+    {
+      "category": "Bridge Manuals",
+      "files": [
+        "TIB_Bridge_Manual_A_Modules_0-1.docx",
+        "TIB_Bridge_Manual_B_Modules_2-3.docx"
+      ]
+    },
+    {
+      "category": "Planning",
+      "files": [
+        "TIB_Module_9_Planning_and_Estimating.docx",
+        "TIB_Controls_Project_Estimating_Model.xlsx"
+      ]
+    },
+    {
+      "category": "Capstone / Participant",
+      "files": [
+        "TIB_Module_10_Capstone_Participant_Brief.docx"
+      ]
+    },
+    {
+      "category": "Assessment / Participant",
+      "files": [
+        "TIB_Assessment_Pack_Modules_4-8_Participant.docx"
+      ]
+    },
+    {
+      "category": "Core Materials",
+      "files": [
+        "Controls Lead Playbook",
+        "Corvane Story",
+        "Weekly Activity Plan",
+        "Foundation Manual Parts 1–4",
+        "Workbook Primer Parts 1–3",
+        "Corvane case file"
+      ]
+    },
+    {
+      "category": "Instructor Only — protected",
+      "files": [
+        "Capstone Scoring Sheet",
+        "Instructor Guide and Answer Key",
+        "Capstone Assessor Guide"
+      ]
+    }
+  ],
+  "assessment": "Certification uses five elements: Module quizzes 15%, Practical 15%, Case reviews 20%, Planning pack 20%, Capstone 30%. Readiness requires 75% overall, at least 70% on every element, and the capstone presentation pass defined in the course guide.",
+  "course_home": {
+    "study_model": [
+      "Read the current module online before starting the practical work.",
+      "Follow the source Course Guide reading-depth rule: Core, Skim or Reference.",
+      "Study the Corvane worked case when the module calls for it.",
+      "Download only the workbook, planning model or assignment template that you must work in.",
+      "Submit practical, case, planning and capstone work through the app."
+    ],
+    "start_here_refs": [
+      "readme-pm-to-controls-lead-course",
+      "tib-pm-to-controls-lead-course-guide"
+    ],
+    "online_learning_statement": "Read the teaching content online first. Download files primarily when you need to work in an exercise, workbook, planning model or submission template.",
+    "layers": [
+      {
+        "name": "KNOWLEDGE",
+        "description": "Course overview, directions, manuals, module reading, cases and explanations served online."
+      },
+      {
+        "name": "PRACTICE",
+        "description": "Workbook exercises, case decisions, planning activities and working files."
+      },
+      {
+        "name": "PERFORMANCE",
+        "description": "Submission, instructor review, scoring, gates, capstone and certification."
+      }
+    ]
+  }
+}

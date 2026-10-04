@@ -1,4 +1,4 @@
-TIB Academy v0.1 — Corvane Energy SAP Controls Project
+TIB Academy v0.1 — From SAP Project Manager to Controls Lead
 
 BUILD STATUS
 - Supabase login: implemented
@@ -13,7 +13,7 @@ BUILD STATUS
 - Assessment engine: next phase
 
 COURSE CODE
-TIB-CORVANE-CONTROLS-PROJECT
+TIB-PM-CONTROLS-LEAD
 
 DEPLOYMENT
 This folder is Vercel-ready. Deploy the folder contents as a static project.
@@ -30,3 +30,11 @@ V0.2 ADDITIONS
 - Submission status/history.
 - Assessment component and score display.
 - Source files remain protected; instructor-only files are never bundled into trainee app.
+
+V0.3: detailed raw assessment items and certification eligibility display added.
+
+V0.4 ONLINE KNOWLEDGE DELIVERY
+- Course Home, Continue Learning, Online Lessons, Print This Reading, Reference Library, and Exercises & Downloads added.
+- 63 online reading entries: 21 Word documents + 42 workbook instruction sets.
+- Approximate words served online: 61295.
+- Instructor/assessor/answer-key content excluded.
