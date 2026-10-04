@@ -24,7 +24,14 @@
           "description": "Identify the systems, clients, company codes, production status and transport routes that form the project landscape.",
           "gate": "G1",
           "gate_requirement": "All financially relevant systems and interfaces listed; validated or flagged; PRD transport route recorded.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w01-landscape-system-inventory-instructions",
+            "w01-landscape-system-inventory-instructions-2",
+            "p01-w01-landscape-system-inventory-instructions",
+            "x01-w01-landscape-system-inventory-instructions"
+          ]
         },
         {
           "id": "W02",
@@ -35,7 +42,13 @@
           "dependencies": "W01 SYS-ID via Ref_SYS",
           "gate": "G1",
           "gate_requirement": "W01 and W02 Checks support the environment gate.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w02-interface-data-flow-inventory-instructions",
+            "w02-interface-data-flow-inventory-instructions-2",
+            "p02-w02-interface-data-flow-inventory-instructions"
+          ]
         }
       ]
     },
@@ -52,7 +65,13 @@
           "description": "Map significant FSLIs, SAP modules, business processes and technical areas.",
           "gate": "G2",
           "gate_requirement": "Every significant FSLI mapped; technical areas present; unspecified processes recorded as Outstanding rather than guessed.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w03-module-business-process-scope-instructions",
+            "w03-module-business-process-scope-instructions-2",
+            "p03-w03-module-business-process-scope-instructions"
+          ]
         }
       ]
     },
@@ -70,7 +89,14 @@
           "dependencies": "W03 BP-ID via Ref_BP",
           "gate": "G3",
           "gate_requirement": "No BP-ID without a risk; SOX risks flagged; owners agreed.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w04-risk-register-instructions",
+            "w04-risk-register-instructions-2",
+            "p04-w04-risk-register-instructions",
+            "x02-w04-risk-register-instructions"
+          ]
         }
       ]
     },
@@ -88,7 +114,14 @@
           "dependencies": "W04 RISK-ID via Ref_RISK",
           "gate": "G4",
           "gate_requirement": "No SOX risk without a key control; ITGC dependencies recorded.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w05-risk-control-matrix-instructions",
+            "w05-risk-control-matrix-instructions-2",
+            "p05-w05-risk-control-matrix-instructions",
+            "x03-w05-risk-control-matrix-instructions"
+          ]
         },
         {
           "id": "W06",
@@ -99,7 +132,12 @@
           "dependencies": "W04 RISK-ID and W05 CTRL-ID",
           "gate": "G4",
           "gate_requirement": "Every SoD risk has a rule and the ruleset is approved.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w06-sod-sensitive-access-matrix-instructions",
+            "w06-sod-sensitive-access-matrix-instructions-2"
+          ]
         }
       ]
     },
@@ -117,7 +155,12 @@
           "dependencies": "W05 CTRL-ID plus risk-owner context",
           "gate": "G5",
           "gate_requirement": "Owners confirmed or escalated; W14 may be issued in scoping form with no conclusion.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w07-control-evidence-owner-matrix-instructions",
+            "w07-control-evidence-owner-matrix-instructions-2"
+          ]
         }
       ]
     },
@@ -135,7 +178,12 @@
           "dependencies": "W05 CTRL-ID and W07 evidence owners",
           "gate": "G6",
           "gate_requirement": "Evidence requests support complete collection.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w08-pbc-evidence-request-register-instructions",
+            "w08-pbc-evidence-request-register-instructions-2"
+          ]
         },
         {
           "id": "W09",
@@ -146,7 +194,13 @@
           "dependencies": "W08 PBC-ID via Ref_PBC",
           "gate": "G6",
           "gate_requirement": "Populations received and every IPE result is Pass.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w09-evidence-index-ipe-log-instructions",
+            "w09-evidence-index-ipe-log-instructions-2",
+            "x04-w09-evidence-index-ipe-log-instructions"
+          ]
         }
       ]
     },
@@ -164,7 +218,13 @@
           "dependencies": "W05 controls and W09 evidence/IPE",
           "gate": "G7",
           "gate_requirement": "TOD and TOE for every key control; ITGC tests scheduled first.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w10-test-plan-instructions",
+            "w10-test-plan-instructions-2",
+            "x05-w10-test-plan-instructions"
+          ]
         }
       ]
     },
@@ -182,7 +242,12 @@
           "dependencies": "W10 TEST-ID and W09 population evidence",
           "gate": "G8",
           "gate_requirement": "Samples logged and agree to workpapers.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w12-sample-selection-log-instructions",
+            "w12-sample-selection-log-instructions-2"
+          ]
         },
         {
           "id": "W11",
@@ -193,7 +258,12 @@
           "dependencies": "W10 TEST-ID; samples from W12",
           "gate": "G8",
           "gate_requirement": "Workpapers reviewed by a different person; exceptions carry DEF-ID or rationale.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w11-test-workpapers-instructions",
+            "w11-test-workpapers-instructions-2"
+          ]
         }
       ]
     },
@@ -211,7 +281,13 @@
           "dependencies": "W10 tests and W11 results",
           "gate": "G9",
           "gate_requirement": "Deficiencies evaluated and remediation/retest status supported.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w13-deficiency-remediation-log-instructions",
+            "w13-deficiency-remediation-log-instructions-2",
+            "x06-w13-deficiency-remediation-log-instructions"
+          ]
         },
         {
           "id": "W14",
@@ -222,7 +298,12 @@
           "dependencies": "W05, W10, W13 and reliance references",
           "gate": "G9",
           "gate_requirement": "Testing-stage coverage checks support the final conclusion.",
-          "submission_expected": true
+          "submission_expected": true,
+          "reading_refs": [
+            "tib-sap-controls-foundation-deployment-guide",
+            "w14-scoping-workpaper-coverage-dashboard-instructions",
+            "w14-scoping-workpaper-coverage-dashboard-instructions-2"
+          ]
         }
       ]
     }
@@ -254,5 +335,34 @@
       ]
     }
   ],
-  "assessment": "The Corvane simulator is organized around project gates G1–G9. A workbook is gate-ready when its built-in checks support the gate and any INFO items have been reviewed and accepted."
+  "assessment": "The Corvane simulator is organized around project gates G1–G9. A workbook is gate-ready when its built-in checks support the gate and any INFO items have been reviewed and accepted.",
+  "course_home": {
+    "study_model": [
+      "Start with Course Home and the Deployment Guide before opening W01.",
+      "Read the relevant online manual and workbook instructions before working in Excel.",
+      "Download Excel only when you need to perform the exercise or inspect the workbook.",
+      "Preserve IDs, Ref_ tabs, Checks tabs and the Golden Thread.",
+      "Submit completed workbooks through the course app when required."
+    ],
+    "start_here_refs": [
+      "readme-corvane-case-file",
+      "tib-sap-controls-foundation-deployment-guide",
+      "corvane-story-controls-lead-narrative"
+    ],
+    "online_learning_statement": "Read the teaching content online first. Download files primarily when you need to work in an exercise, workbook, planning model or submission template.",
+    "layers": [
+      {
+        "name": "KNOWLEDGE",
+        "description": "Course overview, directions, manuals, module reading, cases and explanations served online."
+      },
+      {
+        "name": "PRACTICE",
+        "description": "Workbook exercises, case decisions, planning activities and working files."
+      },
+      {
+        "name": "PERFORMANCE",
+        "description": "Submission, instructor review, scoring, gates, capstone and certification."
+      }
+    ]
+  }
 }
