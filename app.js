@@ -250,9 +250,23 @@ function renderOnlineLessons(referenceOnly=false){
 }
 function renderBlock(b){
   if(b.type==='heading'){const level=Math.min(Math.max(Number(b.level||3),1),4);return `<h${level}>${esc(b.text)}</h${level}>`}
-  if(b.type==='bullet')return `<p>• ${esc(b.text)}</p>`;if(b.type==='number')return `<p>${esc(b.text)}</p>`;
+  if(b.type==='bullet')return `<p>• ${esc(b.text)}</p>`;
+  if(b.type==='number')return `<p>${esc(b.text)}</p>`;
   if(b.type==='table'){
     const rows=b.rows||[];
+    if(!rows.length)return '';
+    const colCount=Math.max(...rows.map(r=>r.length));
+    const tableId='tbl-'+Math.random().toString(36).slice(2,9);
+    const original=`<div id="${tableId}-table" class="reader-table-wrap table-original"><table>${rows.map((row,ri)=>`<tr>${row.map(c=>ri===0?`<th>${esc(c)}</th>`:`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+    if(colCount>=4 && rows.length>1){
+      const headers=rows[0];
+      const cards=rows.slice(1).map((row,idx)=>{
+        const title=row[1]||row[0]||('Record '+(idx+1));
+        const fields=headers.map((h,i)=>`<div class="wide-table-field"><div class="wide-table-label">${esc(h||('Column '+(i+1)))}</div><div>${esc(row[i]??'')}</div></div>`).join('');
+        return `<div class="wide-table-card"><div class="wide-table-card-title">${esc(title)}</div>${fields}</div>`;
+      }).join('');
+      return `<div class="table-view-toggle"><button class="active" data-card-view="${tableId}">Readable View</button><button data-table-view="${tableId}">Table View</button></div><div id="${tableId}-cards" class="wide-table-card-view">${cards}</div>${original}`;
+    }
     return `<div class="reader-table-wrap"><table>${rows.map((row,ri)=>`<tr>${row.map(c=>ri===0?`<th>${esc(c)}</th>`:`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`;
   }
   return `<p>${esc(b.text||'')}</p>`;
@@ -270,8 +284,23 @@ function renderReading(id){
     }
     return `<section id="sec-${i}"><h2>${esc(sectionTitle)}</h2>${blocks.map(renderBlock).join('')}</section>`;
   }).join('');
-  $('content').innerHTML=`<div class="reader-tools"><button class="btn" id="backLessons">← Online Lessons</button><button class="btn" id="printRead">Print This Reading</button><button class="btn primary" id="completeRead">${readStatus(id)==='completed'?'Reading Complete ✓':'Mark Reading Complete'}</button></div><div class="reader-shell"><aside class="reader-toc"><b>IN THIS READING</b>${toc}</aside><article class="reader">${body}</article></div>`;
+  const shellClass=(r.sections||[]).length<=1?'reader-shell single-section':'reader-shell';
+  $('content').innerHTML=`<div class="reader-tools"><button class="btn" id="backLessons">← Online Lessons</button><button class="btn" id="printRead">Print This Reading</button><button class="btn primary" id="completeRead">${readStatus(id)==='completed'?'Reading Complete ✓':'Mark Reading Complete'}</button></div><div class="${shellClass}"><aside class="reader-toc"><b>IN THIS READING</b>${toc}</aside><article class="reader">${body}</article></div>`;
   $('backLessons').onclick=()=>renderOnlineLessons();$('printRead').onclick=()=>window.print();$('completeRead').onclick=async()=>{await markReading(id);renderReading(id)};document.querySelectorAll('[data-sec]').forEach(b=>b.onclick=()=>document.getElementById('sec-'+b.dataset.sec)?.scrollIntoView({behavior:'smooth',block:'start'}));
+  document.querySelectorAll('[data-card-view]').forEach(btn=>btn.onclick=()=>{
+    const id=btn.dataset.cardView;
+    document.getElementById(id+'-cards')?.classList.remove('hidden');
+    document.getElementById(id+'-table')?.classList.remove('active');
+    btn.classList.add('active');
+    document.querySelector(`[data-table-view="${id}"]`)?.classList.remove('active');
+  });
+  document.querySelectorAll('[data-table-view]').forEach(btn=>btn.onclick=()=>{
+    const id=btn.dataset.tableView;
+    document.getElementById(id+'-cards')?.classList.add('hidden');
+    document.getElementById(id+'-table')?.classList.add('active');
+    btn.classList.add('active');
+    document.querySelector(`[data-card-view="${id}"]`)?.classList.remove('active');
+  });
 }
 function renderDownloads(){
   currentView='downloads';setActive('downloads');$('pageTitle').textContent='Exercises & Downloads';$('pageSubtitle').textContent='Download files primarily when you need to work in an exercise, workbook, planning model or template.';

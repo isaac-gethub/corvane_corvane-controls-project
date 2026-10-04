@@ -56,3 +56,12 @@ V0.4.3 READER FORMAT FIX
 - Makes online tables fit the reading page width.
 - Adds fixed table layout, wrapping and print-safe table formatting.
 - Uses table header cells for the first row.
+
+V0.4.4 EXPANDED READER
+- Removes the empty TOC column entirely for single-section readings.
+- Narrows the TOC rail for multi-section readings to reclaim reading width.
+- Expands the main reading pane to use the reclaimed space.
+- Wide tables (4+ columns) default to a readable card view.
+- Adds Readable View / Table View toggle for wide tables.
+- Table View preserves the original tabular relationship.
+- Print uses the original table view for compact source-faithful output.
