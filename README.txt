@@ -44,3 +44,9 @@ V0.4.1 FIX
 - Fixes missing Start Here readings.
 - Fixes missing module/stage Read Online buttons.
 - Keeps reading.json as a source/fallback file.
+
+V0.4.2 TITLE / NAVIGATION FIX
+- Replaces generic 'TIB SYSTEMS LLC' reading-card titles with meaningful document titles.
+- Adds source filename under each online-reading title.
+- Removes duplicate Course Home navigation entry.
+- Keeps all v0.4.1 embedded reading-content fixes.
