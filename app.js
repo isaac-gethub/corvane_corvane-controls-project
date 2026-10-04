@@ -251,14 +251,25 @@ function renderOnlineLessons(referenceOnly=false){
 function renderBlock(b){
   if(b.type==='heading'){const level=Math.min(Math.max(Number(b.level||3),1),4);return `<h${level}>${esc(b.text)}</h${level}>`}
   if(b.type==='bullet')return `<p>• ${esc(b.text)}</p>`;if(b.type==='number')return `<p>${esc(b.text)}</p>`;
-  if(b.type==='table')return `<div style="overflow:auto"><table>${(b.rows||[]).map(row=>`<tr>${row.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+  if(b.type==='table'){
+    const rows=b.rows||[];
+    return `<div class="reader-table-wrap"><table>${rows.map((row,ri)=>`<tr>${row.map(c=>ri===0?`<th>${esc(c)}</th>`:`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+  }
   return `<p>${esc(b.text||'')}</p>`;
 }
 function renderReading(id){
   const r=readingById(id);if(!r)return;currentView='read:'+id;localStorage.setItem('tib_last_reading_'+COURSE.app_course_id,id);
   $('pageTitle').textContent=r.title;$('pageSubtitle').textContent=`Online reading · ${r.category} · ${r.word_count.toLocaleString()} words`;
   const toc=(r.sections||[]).map((s,i)=>`<button data-sec="${i}">${esc(s.title||('Section '+(i+1)))}</button>`).join('');
-  const body=(r.sections||[]).map((s,i)=>`<section id="sec-${i}"><h2>${esc(s.title||('Section '+(i+1)))}</h2>${(s.blocks||[]).map(renderBlock).join('')}</section>`).join('');
+  const body=(r.sections||[]).map((s,i)=>{
+    const sectionTitle=s.title||('Section '+(i+1));
+    const blocks=[...(s.blocks||[])];
+    if(blocks.length && blocks[0]?.type==='heading'){
+      const norm=x=>String(x||'').replace(/\s+/g,' ').trim().toLowerCase();
+      if(norm(blocks[0].text)===norm(sectionTitle)) blocks.shift();
+    }
+    return `<section id="sec-${i}"><h2>${esc(sectionTitle)}</h2>${blocks.map(renderBlock).join('')}</section>`;
+  }).join('');
   $('content').innerHTML=`<div class="reader-tools"><button class="btn" id="backLessons">← Online Lessons</button><button class="btn" id="printRead">Print This Reading</button><button class="btn primary" id="completeRead">${readStatus(id)==='completed'?'Reading Complete ✓':'Mark Reading Complete'}</button></div><div class="reader-shell"><aside class="reader-toc"><b>IN THIS READING</b>${toc}</aside><article class="reader">${body}</article></div>`;
   $('backLessons').onclick=()=>renderOnlineLessons();$('printRead').onclick=()=>window.print();$('completeRead').onclick=async()=>{await markReading(id);renderReading(id)};document.querySelectorAll('[data-sec]').forEach(b=>b.onclick=()=>document.getElementById('sec-'+b.dataset.sec)?.scrollIntoView({behavior:'smooth',block:'start'}));
 }

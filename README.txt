@@ -50,3 +50,9 @@ V0.4.2 TITLE / NAVIGATION FIX
 - Adds source filename under each online-reading title.
 - Removes duplicate Course Home navigation entry.
 - Keeps all v0.4.1 embedded reading-content fixes.
+
+V0.4.3 READER FORMAT FIX
+- Removes duplicate section/title display where source heading matched the online section heading.
+- Makes online tables fit the reading page width.
+- Adds fixed table layout, wrapping and print-safe table formatting.
+- Uses table header cells for the first row.

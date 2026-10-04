@@ -84,3 +84,46 @@ button{cursor:pointer}
 .continue-card{border:2px solid var(--gold);background:#fffaf0}.online-badge{display:inline-block;background:#e6eef9;color:var(--navy);padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800}
 @media(max-width:900px){.reader-shell{grid-template-columns:1fr}.reader-toc{position:relative;max-height:none}.layer-grid{grid-template-columns:1fr}}
 @media print{.sidebar,.topbar,.reader-toc,.reader-tools,.mobile-note{display:none!important}.shell{display:block!important}.main{padding:0!important}.reader{border:0!important;padding:0!important}body{background:white!important}.reader table{font-size:10pt}}
+
+/* v0.4.3 reader formatting fixes */
+.reader{overflow-x:hidden}
+.reader section{max-width:100%}
+.reader table{
+  width:100%;
+  max-width:100%;
+  table-layout:fixed;
+  border-collapse:collapse;
+  margin:14px 0;
+  font-size:13px;
+}
+.reader th,.reader td{
+  border:1px solid var(--border);
+  padding:7px 8px;
+  vertical-align:top;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  hyphens:auto;
+}
+.reader table *{max-width:100%}
+.reader p,.reader li,.reader h1,.reader h2,.reader h3,.reader h4{
+  overflow-wrap:anywhere;
+}
+@media(max-width:900px){
+  .reader{padding:18px}
+  .reader table{font-size:12px}
+  .reader th,.reader td{padding:6px}
+}
+@media print{
+  .reader table{
+    width:100%!important;
+    max-width:100%!important;
+    table-layout:fixed!important;
+    font-size:9pt!important;
+  }
+  .reader th,.reader td{
+    padding:4pt!important;
+    overflow-wrap:anywhere!important;
+    word-break:break-word!important;
+  }
+}
