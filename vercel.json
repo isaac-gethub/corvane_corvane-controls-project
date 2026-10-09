@@ -1,4 +1,5 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false
+  "redirects": [
+    { "source": "/(.*)", "destination": "https://tib-corvane-academy-app.vercel.app/?course=corvane_controls_project", "permanent": false }
+  ]
 }
