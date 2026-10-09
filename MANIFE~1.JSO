@@ -1,8 +1,0 @@
-{
-  "name": "Corvane Energy SAP Controls Project",
-  "short_name": "Controls Project Simulator",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#F3ECDD",
-  "theme_color": "#142D5A"
-}
